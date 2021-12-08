@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="com.BD.Komunikacja.miejska.Parkingi">
+        <table name="parkingi" schema="sql11452112" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="Id" precision="2"/>
+            </id>
+            <basic name="nazwa">
+                <column name="Nazwa" length="50"/>
+            </basic>
+            <basic name="adres">
+                <column name="Adres" length="100"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
