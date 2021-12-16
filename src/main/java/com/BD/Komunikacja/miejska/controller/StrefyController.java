@@ -1,11 +1,9 @@
 package com.BD.Komunikacja.miejska.controller;
 
 import com.BD.Komunikacja.miejska.model.Strefy;
-import com.BD.Komunikacja.miejska.request.PracownicyRequest;
 import com.BD.Komunikacja.miejska.request.StrefyRequest;
 import com.BD.Komunikacja.miejska.response.StrefyResponse;
 import com.BD.Komunikacja.miejska.service.StrefyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +12,11 @@ import java.util.List;
 
 @Controller
 public class StrefyController {
-    @Autowired
-    private StrefyService strefyService;
+    private final StrefyService strefyService;
+
+    public StrefyController(StrefyService strefyService) {
+        this.strefyService = strefyService;
+    }
 
     @GetMapping("/strefy")
     @CrossOrigin(origins = "http://localhost:3000/")

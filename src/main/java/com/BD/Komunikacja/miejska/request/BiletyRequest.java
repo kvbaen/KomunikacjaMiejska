@@ -8,4 +8,5 @@ import lombok.Setter;
 public class BiletyRequest {
     private String rodzaj;
     private int koszt;
+    private int id_klienta;
 }

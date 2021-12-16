@@ -40,6 +40,18 @@ public class AutobusyService {
         autobusyRepository.delete(deleteId);
     }
 
+    public void setBusy(int autobusId){
+        Autobusy setBusy1 = autobusyRepository.findById(autobusId).orElseThrow(()-> new RuntimeException("Nie znalazło użytkownika"));
+        setBusy1.setIsBusy(1);
+        autobusyRepository.save(setBusy1);
+    }
+
+    public void setNotBusy(int autobusId){
+        Autobusy setBusy0 = autobusyRepository.findById(autobusId).orElseThrow(()-> new RuntimeException("Nie znalazło użytkownika"));
+        setBusy0.setIsBusy(0);
+        autobusyRepository.save(setBusy0);
+    }
+
     public List<Autobusy> getAll(){
         return autobusyRepository.findAll();
     }

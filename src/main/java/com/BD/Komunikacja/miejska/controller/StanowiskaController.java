@@ -1,11 +1,9 @@
 package com.BD.Komunikacja.miejska.controller;
 
 import com.BD.Komunikacja.miejska.model.Stanowiska;
-import com.BD.Komunikacja.miejska.request.PracownicyRequest;
 import com.BD.Komunikacja.miejska.request.StanowiskaRequest;
 import com.BD.Komunikacja.miejska.response.StanowiskaResponse;
 import com.BD.Komunikacja.miejska.service.StanowiskaService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +12,11 @@ import java.util.List;
 
 @Controller
 public class StanowiskaController {
-    @Autowired
-    private StanowiskaService stanowiskaService;
+    private final StanowiskaService stanowiskaService;
+
+    public StanowiskaController(StanowiskaService stanowiskaService) {
+        this.stanowiskaService = stanowiskaService;
+    }
 
     @GetMapping("/stanowiska")
     @CrossOrigin(origins = "http://localhost:3000/")

@@ -1,11 +1,9 @@
 package com.BD.Komunikacja.miejska.controller;
 
 import com.BD.Komunikacja.miejska.model.Bilety;
-import com.BD.Komunikacja.miejska.request.AutobusyRequest;
 import com.BD.Komunikacja.miejska.request.BiletyRequest;
 import com.BD.Komunikacja.miejska.response.BiletyResponse;
 import com.BD.Komunikacja.miejska.service.BiletyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +12,11 @@ import java.util.List;
 
 @Controller
 public class BiletyController {
-    @Autowired
-    private BiletyService biletyService;
+    private final BiletyService biletyService;
+
+    public BiletyController(BiletyService biletyService) {
+        this.biletyService = biletyService;
+    }
 
     @GetMapping("/bilety")
     @CrossOrigin(origins = "http://localhost:3000/")

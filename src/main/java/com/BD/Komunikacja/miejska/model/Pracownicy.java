@@ -19,6 +19,8 @@ public class Pracownicy {
     private String nazwisko;
     @Column(name = "Wynagrodzenie", nullable = false)
     private int wynagrodzenie;
+    @Column(name = "ISBUSY")
+    private int isBusy = 0;
     @Column(name = "ID_STANOWISKA", nullable = false)
     private int id_stanowiska;
     @Column(name = "ID_CENTRALI", nullable = false)

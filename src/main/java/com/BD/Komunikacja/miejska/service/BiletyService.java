@@ -1,10 +1,8 @@
 package com.BD.Komunikacja.miejska.service;
 
 import com.BD.Komunikacja.miejska.model.Bilety;
-import com.BD.Komunikacja.miejska.model.EKarty;
 import com.BD.Komunikacja.miejska.repository.BiletyRepository;
 import com.BD.Komunikacja.miejska.request.BiletyRequest;
-import com.BD.Komunikacja.miejska.request.EKartyRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -21,6 +19,7 @@ public class BiletyService {
         Bilety bilet = new Bilety();
         bilet.setRodzaj(request.getRodzaj());
         bilet.setKoszt(request.getKoszt());
+        bilet.setId_klienta(request.getId_klienta());
         biletyRepository.saveAndFlush(bilet);
     }
 
@@ -28,6 +27,7 @@ public class BiletyService {
         Bilety bilet = biletyRepository.findById(biletId).orElseThrow(()-> new RuntimeException("Nie znalazło biletu"));
         bilet.setRodzaj(request.getRodzaj());
         bilet.setKoszt(request.getKoszt());
+        bilet.setId_klienta(request.getId_klienta());
         biletyRepository.saveAndFlush(bilet);
     }
 

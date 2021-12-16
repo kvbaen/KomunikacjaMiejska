@@ -4,7 +4,6 @@ import com.BD.Komunikacja.miejska.model.Pracownicy;
 import com.BD.Komunikacja.miejska.request.PracownicyRequest;
 import com.BD.Komunikacja.miejska.response.PracownicyResponse;
 import com.BD.Komunikacja.miejska.service.PracownicyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +13,11 @@ import java.util.List;
 
 @Controller
 public class PracownicyController {
-    @Autowired
-    private PracownicyService pracownicyService;
+    private final PracownicyService pracownicyService;
+
+    public PracownicyController(PracownicyService pracownicyService) {
+        this.pracownicyService = pracownicyService;
+    }
 
     @GetMapping("/pracownicy")
     @CrossOrigin(origins = "http://localhost:3000/")
@@ -45,6 +47,20 @@ public class PracownicyController {
     public ResponseEntity<String> pracownicyD(@PathVariable int id){
         pracownicyService.delete(id);
         return ResponseEntity.ok("usunieto");
+    }
+
+    @PostMapping("/pracownicy/setBusy/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ResponseEntity<String> pracownicySB(@PathVariable int id){
+        pracownicyService.setBusy(id);
+        return ResponseEntity.ok("isBusy = 1");
+    }
+
+    @PostMapping("/pracownicy/setNotBusy/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ResponseEntity<String> pracownicySNB(@PathVariable int id){
+        pracownicyService.setNotBusy(id);
+        return ResponseEntity.ok("isBusy = 0");
     }
 
 

@@ -40,6 +40,18 @@ public class PracownicyService {
         pracownicyRepository.delete(deleteId);
     }
 
+    public void setBusy(int pracownikId){
+        Pracownicy setBusy1 = pracownicyRepository.findById(pracownikId).orElseThrow(()-> new RuntimeException("Nie znalazło użytkownika"));
+        setBusy1.setIsBusy(1);
+        pracownicyRepository.save(setBusy1);
+    }
+
+    public void setNotBusy(int pracownikId){
+        Pracownicy setBusy0 = pracownicyRepository.findById(pracownikId).orElseThrow(()-> new RuntimeException("Nie znalazło użytkownika"));
+        setBusy0.setIsBusy(0);
+        pracownicyRepository.save(setBusy0);
+    }
+
     public List<Pracownicy> getAll() {
         return pracownicyRepository.findAll();
     }

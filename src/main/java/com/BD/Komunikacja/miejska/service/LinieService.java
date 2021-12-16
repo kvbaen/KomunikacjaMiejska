@@ -20,6 +20,7 @@ public class LinieService {
     public void add(LinieRequest request){
         Linie linia = new Linie();
         linia.setNumerLinii(request.getNumerLinii());
+        linia.getPrzystanki();
         linieRepository.saveAndFlush(linia);
     }
 

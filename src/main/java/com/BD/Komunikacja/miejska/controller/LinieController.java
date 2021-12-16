@@ -1,11 +1,9 @@
 package com.BD.Komunikacja.miejska.controller;
 
 import com.BD.Komunikacja.miejska.model.Linie;
-import com.BD.Komunikacja.miejska.request.KlienciRequest;
 import com.BD.Komunikacja.miejska.request.LinieRequest;
 import com.BD.Komunikacja.miejska.response.LinieResponse;
 import com.BD.Komunikacja.miejska.service.LinieService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,8 +12,11 @@ import java.util.List;
 
 @Controller
 public class LinieController {
-    @Autowired
-    private LinieService linieService;
+    private final LinieService linieService;
+
+    public LinieController(LinieService linieService) {
+        this.linieService = linieService;
+    }
 
     @GetMapping("/linie")
     @CrossOrigin(origins = "http://localhost:3000/")

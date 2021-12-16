@@ -1,23 +1,20 @@
 package com.BD.Komunikacja.miejska.controller;
 
 import com.BD.Komunikacja.miejska.model.Klienci;
-import com.BD.Komunikacja.miejska.model.Linie;
-import com.BD.Komunikacja.miejska.request.EKartyRequest;
 import com.BD.Komunikacja.miejska.request.KlienciRequest;
-import com.BD.Komunikacja.miejska.request.LinieRequest;
 import com.BD.Komunikacja.miejska.response.KlienciResponse;
-import com.BD.Komunikacja.miejska.response.LinieResponse;
 import com.BD.Komunikacja.miejska.service.KlienciService;
-import com.BD.Komunikacja.miejska.service.LinieService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 public class KlienciController {
-    @Autowired
-    private KlienciService klienciService;
+    private final KlienciService klienciService;
+
+    public KlienciController(KlienciService klienciService) {
+        this.klienciService = klienciService;
+    }
 
     @GetMapping("/klienci")
     @CrossOrigin(origins = "http://localhost:3000/")

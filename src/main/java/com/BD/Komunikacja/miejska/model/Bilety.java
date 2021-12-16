@@ -18,4 +18,6 @@ public class Bilety {
     private String rodzaj;
     @Column(name = "Koszt", nullable = false)
     private int koszt;
+    @Column(name = "ID_KLIENTA", nullable = false)
+    private int id_klienta;
 }
