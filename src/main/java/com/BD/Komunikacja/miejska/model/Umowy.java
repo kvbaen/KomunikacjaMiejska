@@ -13,7 +13,6 @@ import java.util.Objects;
 @Table(name = "UMOWY")
 public class Umowy {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
     @Column(name = "Rodzaj_umowy", nullable = false, length = 20)

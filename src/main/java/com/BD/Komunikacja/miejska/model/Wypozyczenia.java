@@ -12,7 +12,6 @@ import java.sql.Date;
 @Table(name = "WYPOZYCZENIA")
 public class Wypozyczenia {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
     @Column(name = "Data_od", nullable = false)

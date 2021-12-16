@@ -12,10 +12,7 @@ import com.BD.Komunikacja.miejska.service.LinieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,7 @@ public class AutobusyController {
     private AutobusyService autobusyService;
 
     @GetMapping("/autobusy")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<AutobusyResponse> autobusy() {
         AutobusyResponse autobusyResponse = new AutobusyResponse();
         List<Autobusy> autobusyList = autobusyService.getAll();
@@ -33,18 +31,21 @@ public class AutobusyController {
     }
 
     @PostMapping("/autobusy")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> autobusyP(@RequestBody AutobusyRequest request) {
         autobusyService.add(request);
         return ResponseEntity.ok("dodano");
     }
 
     @PostMapping("/autobusy/edit/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> autobusyE(@PathVariable int id, @RequestBody AutobusyRequest request){
         autobusyService.edit(id, request);
         return ResponseEntity.ok("edytowano");
     }
 
     @PostMapping("/autobusy/delete/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> autobusyD(@PathVariable int id){
         autobusyService.delete(id);
         return ResponseEntity.ok("usunieto");

@@ -21,7 +21,7 @@ public class PracownicyService {
         pracownik.setNazwisko(request.getNazwisko());
         pracownik.setWynagrodzenie(request.getWynagrodzenie());
         pracownik.setId_stanowiska(request.getId_stanowiska());
-        pracownik.setId_centrala_komunikacji_miejskiej(request.getId_centrala_komunikacji_miejskiej());
+        pracownik.setId_centrali(request.getId_centrali());
         pracownicyRepository.saveAndFlush(pracownik);
     }
 
@@ -31,7 +31,7 @@ public class PracownicyService {
         pracownik.setNazwisko(request.getNazwisko());
         pracownik.setWynagrodzenie(request.getWynagrodzenie());
         pracownik.setId_stanowiska(request.getId_stanowiska());
-        pracownik.setId_centrala_komunikacji_miejskiej(request.getId_centrala_komunikacji_miejskiej());
+        pracownik.setId_centrali(request.getId_centrali());
         pracownicyRepository.saveAndFlush(pracownik);
     }
 

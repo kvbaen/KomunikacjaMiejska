@@ -12,7 +12,6 @@ import java.util.Objects;
 @Table(name = "KLIENCI")
 public class Klienci {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
     @Column(name = "Imie", nullable = false, length = 20)
@@ -21,6 +20,6 @@ public class Klienci {
     private String nazwisko;
     @Column(name = "ID_E_KARTY", nullable = false)
     private int id_e_karty;
-    @Column(name = "ID_CENTRALA_KOMUNIKACJI_MIEJSKIEJ", nullable = false)
-    private int id_centrala_komunikacji_miejskiej;
+    @Column(name = "ID_CENTRALI", nullable = false)
+    private int id_centrali;
 }

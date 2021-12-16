@@ -9,5 +9,5 @@ public class KlienciRequest {
     private String imie;
     private String nazwisko;
     private int id_e_karty;
-    private int id_centrala_komunikacji_miejskiej;
+    private int id_centrali;
 }

@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Table(name = "E_KARTY")
 public class EKarty {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
     @Column(name = "Nazwa", nullable = false, length = 40)

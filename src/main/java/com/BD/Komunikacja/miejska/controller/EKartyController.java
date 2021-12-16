@@ -9,10 +9,7 @@ import com.BD.Komunikacja.miejska.service.EKartyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,6 +19,7 @@ public class EKartyController {
     private EKartyService eKartyService;
 
     @GetMapping("/ekarty")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<EKartyResponse> eKarty() {
         EKartyResponse eKartyResponse = new EKartyResponse();
         List<EKarty> eKartyList = eKartyService.getAll();
@@ -30,18 +28,21 @@ public class EKartyController {
     }
 
     @PostMapping("/ekarty")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> eKartyP(@RequestBody EKartyRequest request) {
         eKartyService.add(request);
         return ResponseEntity.ok("dodano");
     }
 
     @PostMapping("/ekarty/edit/{id}")
-    public ResponseEntity<String> biletyE(@PathVariable int id, @RequestBody EKartyRequest request){
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ResponseEntity<String> eKartyE(@PathVariable int id, @RequestBody EKartyRequest request){
         eKartyService.edit(id, request);
         return ResponseEntity.ok("edytowano");
     }
 
     @PostMapping("/ekarty/delete/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> eKartyD(@PathVariable int id){
         eKartyService.delete(id);
         return ResponseEntity.ok("usunieto");

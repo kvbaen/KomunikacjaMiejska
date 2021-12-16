@@ -12,7 +12,6 @@ import java.util.Set;
 @Table(name = "LINIE")
 public class Linie {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
     @Column(name = "Numer_linii", nullable = false)

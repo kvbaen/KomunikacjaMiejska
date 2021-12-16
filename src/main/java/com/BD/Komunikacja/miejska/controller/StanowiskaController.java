@@ -8,10 +8,7 @@ import com.BD.Komunikacja.miejska.service.StanowiskaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +18,7 @@ public class StanowiskaController {
     private StanowiskaService stanowiskaService;
 
     @GetMapping("/stanowiska")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<StanowiskaResponse> stanowiska() {
         StanowiskaResponse stanowiskaResponse = new StanowiskaResponse();
         List<Stanowiska> stanowiskaList= stanowiskaService.getAll();
@@ -29,18 +27,21 @@ public class StanowiskaController {
     }
 
     @PostMapping("/stanowiska")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> stanowiskaP(@RequestBody StanowiskaRequest request) {
         stanowiskaService.add(request);
         return ResponseEntity.ok("dodano");
     }
 
     @PostMapping("/stanowiska/edit/{id}")
-    public ResponseEntity<String> pracownicyE(@PathVariable int id, @RequestBody StanowiskaRequest request){
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ResponseEntity<String> stanowiskaE(@PathVariable int id, @RequestBody StanowiskaRequest request){
         stanowiskaService.edit(id, request);
         return ResponseEntity.ok("edytowano");
     }
 
     @PostMapping("/stanowiska/delete/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> stanowiskaD(@PathVariable int id){
         stanowiskaService.delete(id);
         return ResponseEntity.ok("usunieto");

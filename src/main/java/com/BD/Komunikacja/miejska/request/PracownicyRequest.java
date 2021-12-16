@@ -10,5 +10,5 @@ public class PracownicyRequest {
     private String nazwisko;
     private int wynagrodzenie;
     private int id_stanowiska;
-    private int id_centrala_komunikacji_miejskiej;
+    private int id_centrali;
 }

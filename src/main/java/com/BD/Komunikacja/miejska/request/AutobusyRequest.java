@@ -10,5 +10,5 @@ public class AutobusyRequest {
     private String marka;
     private String model;
     private int id_parkingu;
-    private int id_centrala_komunikacji_miejskiej;
+    private int id_centrali;
 }

@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Table(name = "PRACOWNICY")
 public class Pracownicy {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
     @Column(name = "Imie", nullable = false, length = 20)
@@ -22,6 +21,6 @@ public class Pracownicy {
     private int wynagrodzenie;
     @Column(name = "ID_STANOWISKA", nullable = false)
     private int id_stanowiska;
-    @Column(name = "ID_CENTRALA_KOMUNIKACJI_MIEJSKIEJ", nullable = false)
-    private int id_centrala_komunikacji_miejskiej;
+    @Column(name = "ID_CENTRALI", nullable = false)
+    private int id_centrali;
 }

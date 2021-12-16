@@ -9,10 +9,9 @@ import java.util.Objects;
 @Getter
 @Setter
 @Entity
-@Table(name = "CENTRALA_KOMUNIKACJI_MIEJSKIEJ")
-public class CentralaKomunikacjiMiejskiej {
+@Table(name = "CENTRALA")
+public class Centrala {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
 }

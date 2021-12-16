@@ -2,7 +2,7 @@
 <entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
                  version="3.0">
 
-    <entity class="com.BD.Komunikacja.miejska.model.CentralaKomunikacjiMiejskiej">
+    <entity class="com.BD.Komunikacja.miejska.model.Centrala">
         <table name="centrala_komunikacji_miejskiej" schema="sql11452112" catalog=""/>
         <attributes>
             <id name="id">

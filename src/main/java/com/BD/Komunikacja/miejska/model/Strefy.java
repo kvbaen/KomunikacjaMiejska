@@ -12,7 +12,6 @@ import java.util.Objects;
 @Table(name = "STREFY")
 public class Strefy {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id", nullable = false)
     private int id;
     @Column(name = "Nazwa", nullable = false, length = 20)

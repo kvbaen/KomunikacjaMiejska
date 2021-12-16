@@ -8,10 +8,7 @@ import com.BD.Komunikacja.miejska.service.LinieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +18,7 @@ public class LinieController {
     private LinieService linieService;
 
     @GetMapping("/linie")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<LinieResponse> linie() {
         LinieResponse linieResponse = new LinieResponse();
         List<Linie> linieList = linieService.getAll();
@@ -29,18 +27,21 @@ public class LinieController {
     }
 
     @PostMapping("/linie")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> linieP(@RequestBody LinieRequest request) {
         linieService.add(request);
         return ResponseEntity.ok("dodano");
     }
 
     @PostMapping("/linie/edit/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> linieE(@PathVariable int id, @RequestBody LinieRequest request){
         linieService.edit(id, request);
         return ResponseEntity.ok("edytowano");
     }
 
     @PostMapping("/linie/delete/{id}")
+    @CrossOrigin(origins = "http://localhost:3000/")
     public ResponseEntity<String> linieD(@PathVariable int id){
         linieService.delete(id);
         return ResponseEntity.ok("usunieto");

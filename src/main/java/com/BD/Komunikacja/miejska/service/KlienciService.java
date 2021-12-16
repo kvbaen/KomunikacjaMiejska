@@ -1,10 +1,8 @@
 package com.BD.Komunikacja.miejska.service;
 
 import com.BD.Komunikacja.miejska.model.Klienci;
-import com.BD.Komunikacja.miejska.model.Linie;
 import com.BD.Komunikacja.miejska.repository.KlienciRepository;
 import com.BD.Komunikacja.miejska.request.KlienciRequest;
-import com.BD.Komunikacja.miejska.request.LinieRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +20,7 @@ public class KlienciService {
         klient.setImie(request.getImie());
         klient.setNazwisko(request.getNazwisko());
         klient.setId_e_karty(request.getId_e_karty());
-        klient.setId_centrala_komunikacji_miejskiej(request.getId_centrala_komunikacji_miejskiej());
+        klient.setId_centrali(request.getId_centrali());
         klienciRepository.saveAndFlush(klient);
     }
 
@@ -31,7 +29,7 @@ public class KlienciService {
         klient.setImie(request.getImie());
         klient.setNazwisko(request.getNazwisko());
         klient.setId_e_karty(request.getId_e_karty());
-        klient.setId_centrala_komunikacji_miejskiej(request.getId_centrala_komunikacji_miejskiej());
+        klient.setId_centrali(request.getId_centrali());
         klienciRepository.saveAndFlush(klient);
     }
 

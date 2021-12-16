@@ -21,7 +21,7 @@ public class AutobusyService {
         autobus.setMarka(request.getMarka());
         autobus.setModel(request.getModel());
         autobus.setId_parkingu(request.getId_parkingu());
-        autobus.setId_centrala_komunikacji_miejskiej(request.getId_centrala_komunikacji_miejskiej());
+        autobus.setId_centrali(request.getId_centrali());
         autobusyRepository.saveAndFlush(autobus);
     }
 
@@ -31,7 +31,7 @@ public class AutobusyService {
         autobus.setMarka(request.getMarka());
         autobus.setModel(request.getModel());
         autobus.setId_parkingu(request.getId_parkingu());
-        autobus.setId_centrala_komunikacji_miejskiej(request.getId_centrala_komunikacji_miejskiej());
+        autobus.setId_centrali(request.getId_centrali());
         autobusyRepository.saveAndFlush(autobus);
     }
 
