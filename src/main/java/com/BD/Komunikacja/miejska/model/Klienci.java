@@ -18,8 +18,6 @@ public class Klienci {
     private String imie;
     @Column(name = "Nazwisko", nullable = false, length = 40)
     private String nazwisko;
-    @Column(name = "ID_E_KARTY", nullable = false)
-    private int id_e_karty;
     @Column(name = "ID_CENTRALI", nullable = false)
     private int id_centrali;
 }
