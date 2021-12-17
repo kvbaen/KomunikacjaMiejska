@@ -5,10 +5,12 @@ import com.BD.Komunikacja.miejska.request.KlienciRequest;
 import com.BD.Komunikacja.miejska.response.KlienciResponse;
 import com.BD.Komunikacja.miejska.service.KlienciService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Controller
 public class KlienciController {
     private final KlienciService klienciService;
 

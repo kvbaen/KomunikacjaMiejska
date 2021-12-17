@@ -19,16 +19,14 @@ public class KlienciService {
         Klienci klient = new Klienci();
         klient.setImie(request.getImie());
         klient.setNazwisko(request.getNazwisko());
-        klient.setId_e_karty(request.getId_e_karty());
         klient.setId_centrali(request.getId_centrali());
         klienciRepository.saveAndFlush(klient);
     }
 
     public void edit (int klientId, KlienciRequest request){
-        Klienci klient = klienciRepository.findById(klientId).orElseThrow(()-> new RuntimeException("Nie znalazło parkingu"));
+        Klienci klient = klienciRepository.findById(klientId).orElseThrow(()-> new RuntimeException("Nie znalazło klienta"));
         klient.setImie(request.getImie());
         klient.setNazwisko(request.getNazwisko());
-        klient.setId_e_karty(request.getId_e_karty());
         klient.setId_centrali(request.getId_centrali());
         klienciRepository.saveAndFlush(klient);
     }
