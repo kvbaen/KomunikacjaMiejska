@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Objects;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -20,4 +21,7 @@ public class Klienci {
     private String nazwisko;
     @Column(name = "ID_CENTRALI", nullable = false)
     private int id_centrali;
+
+    @OneToMany(mappedBy = "klienci")
+    private Set<Bilety> bilety;
 }
