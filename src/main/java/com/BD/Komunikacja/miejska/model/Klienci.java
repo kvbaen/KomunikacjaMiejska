@@ -22,6 +22,4 @@ public class Klienci {
     @Column(name = "ID_CENTRALI", nullable = false)
     private int id_centrali;
 
-    @OneToMany(mappedBy = "klienci")
-    private Set<Bilety> bilety;
 }

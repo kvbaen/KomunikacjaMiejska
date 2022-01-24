@@ -17,6 +17,4 @@ public class Stanowiska {
     @Column(name = "Nazwa", nullable = false, length = 30)
     private String nazwa;
 
-    @OneToMany(mappedBy = "stanowiska")
-    private Set<Pracownicy> pracownicy;
 }

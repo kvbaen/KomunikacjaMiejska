@@ -27,7 +27,4 @@ public class Pracownicy {
     @Column(name = "ID_CENTRALI", nullable = false)
     private int id_centrali;
 
-    @ManyToOne
-    @JoinColumn(name="ID_STANOWISKA", nullable=false)
-    private Stanowiska stanowiska;
 }
