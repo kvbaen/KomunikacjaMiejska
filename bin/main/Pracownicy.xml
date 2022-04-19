@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="com.BD.Komunikacja.miejska.model.Pracownicy">
+        <table name="pracownicy" schema="sql11452112" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="Id" precision="10"/>
+            </id>
+            <basic name="imie">
+                <column name="Imie" length="20"/>
+            </basic>
+            <basic name="nazwisko">
+                <column name="Nazwisko" length="30"/>
+            </basic>
+            <basic name="wynagrodzenie">
+                <column name="Wynagrodzenie" precision="6"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>
