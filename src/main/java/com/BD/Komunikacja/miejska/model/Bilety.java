@@ -20,4 +20,5 @@ public class Bilety {
     private int koszt;
     @Column(name = "ID_KLIENTA", nullable = false)
     private int id_klienta;
+
 }

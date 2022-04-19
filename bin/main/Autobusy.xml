@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 version="3.0">
+
+    <entity class="com.BD.Komunikacja.miejska.model.Autobusy">
+        <table name="autobusy" schema="sql11452112" catalog=""/>
+        <attributes>
+            <id name="id">
+                <column name="Id" precision="5"/>
+            </id>
+            <basic name="numerBoczny">
+                <column name="Numer_boczny" precision="5"/>
+            </basic>
+            <basic name="marka">
+                <column name="Marka" length="30"/>
+            </basic>
+            <basic name="model">
+                <column name="Model" length="30"/>
+            </basic>
+        </attributes>
+    </entity>
+</entity-mappings>

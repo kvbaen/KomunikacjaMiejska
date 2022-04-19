@@ -25,7 +25,7 @@ public class LinieService {
     }
 
     public void edit (int liniaId, LinieRequest request){
-        Linie linia = linieRepository.findById(liniaId).orElseThrow(()-> new RuntimeException("Nie znalazło parkingu"));
+        Linie linia = linieRepository.findById(liniaId).orElseThrow(()-> new RuntimeException("Nie znalazło linii"));
         linia.setNumerLinii(request.getNumerLinii());
         linieRepository.saveAndFlush(linia);
     }
@@ -37,5 +37,9 @@ public class LinieService {
 
     public List<Linie> getAll(){
         return linieRepository.findAll();
+    }
+
+    public Linie getOne(int liniaId){
+        return linieRepository.findById(liniaId).orElseThrow(()-> new RuntimeException("Nie znaleziono linii"));
     }
 }

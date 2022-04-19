@@ -1,6 +1,7 @@
 package com.BD.Komunikacja.miejska.controller;
 
 import com.BD.Komunikacja.miejska.model.Przystanki;
+import com.BD.Komunikacja.miejska.request.PrzystankiLinieRequest;
 import com.BD.Komunikacja.miejska.request.PrzystankiRequest;
 import com.BD.Komunikacja.miejska.response.PrzystankiResponse;
 import com.BD.Komunikacja.miejska.service.PrzystankiService;
@@ -46,5 +47,11 @@ public class PrzystankiController {
     public ResponseEntity<String> przystankiD(@PathVariable int id){
         przystankiService.delete(id);
         return ResponseEntity.ok("usunieto");
+    }
+    @PostMapping("/przystankilinie")
+    @CrossOrigin(origins = "http://localhost:3000/")
+    public ResponseEntity<String> przystankiLinie(@RequestBody PrzystankiLinieRequest request){
+        przystankiService.addLinia(request.getId_przystanku(), request.getId_linii());
+        return ResponseEntity.ok("dodano linie do przystanku");
     }
 }

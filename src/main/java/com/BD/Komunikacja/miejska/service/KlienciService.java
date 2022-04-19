@@ -24,7 +24,7 @@ public class KlienciService {
     }
 
     public void edit (int klientId, KlienciRequest request){
-        Klienci klient = klienciRepository.findById(klientId).orElseThrow(()-> new RuntimeException("Nie znalazło parkingu"));
+        Klienci klient = klienciRepository.findById(klientId).orElseThrow(()-> new RuntimeException("Nie znalazło klienta"));
         klient.setImie(request.getImie());
         klient.setNazwisko(request.getNazwisko());
         klient.setId_centrali(request.getId_centrali());

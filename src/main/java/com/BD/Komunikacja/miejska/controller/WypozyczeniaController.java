@@ -1,10 +1,7 @@
 package com.BD.Komunikacja.miejska.controller;
 
-import com.BD.Komunikacja.miejska.model.Umowy;
 import com.BD.Komunikacja.miejska.model.Wypozyczenia;
-import com.BD.Komunikacja.miejska.request.UmowyRequest;
 import com.BD.Komunikacja.miejska.request.WypozyczeniaRequest;
-import com.BD.Komunikacja.miejska.response.UmowyResponse;
 import com.BD.Komunikacja.miejska.response.WypozyczeniaResponse;
 import com.BD.Komunikacja.miejska.service.WypozyczeniaService;
 import org.springframework.http.ResponseEntity;

@@ -28,5 +28,7 @@ public class Przystanki {
             inverseJoinColumns = @JoinColumn(name="ID_LINII")
     )
     Set<Linie> linie;
-
+    public void addLinia(Linie linia){
+        linie.add(linia);
+    }
 }

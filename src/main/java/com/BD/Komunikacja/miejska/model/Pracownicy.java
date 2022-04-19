@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Setter
 @Getter
@@ -25,4 +26,5 @@ public class Pracownicy {
     private int id_stanowiska;
     @Column(name = "ID_CENTRALI", nullable = false)
     private int id_centrali;
+
 }

@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AutobusyRepository extends JpaRepository<Autobusy, Integer> {
+    Autobusy getAutobusyByIsBusy(int isBusy);
 }
